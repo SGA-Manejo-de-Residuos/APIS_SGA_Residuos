@@ -1,0 +1,18 @@
+FROM node:lts-alpine
+
+RUN apk update && apk add --no-cache git
+
+WORKDIR /app
+
+ARG REPO_URL
+RUN git clone $REPO_URL .
+
+COPY package*.json ./
+
+RUN npm install
+
+RUN touch .env
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mongodbsga:
+    image: mongo
+    container_name: mongodbsga
+    ports:
+      - "3001:3000"
+      - "27018:27017"
+    networks:
+      - sga
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin1234
+
+  api-imagenes:
+    build:
+      context: .
+      dockerfile: dockerfile
+      args:
+        - REPO_URL= https://github.com/jayler0203/API_imagenes.git
+    ports:
+      - "3000:3000"
+    networks:
+      - sga
+    env_file: 
+      - .env
+
+networks:
+  sga:

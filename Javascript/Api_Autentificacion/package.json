@@ -1,0 +1,36 @@
+{
+  "name": "api_imagenes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "CommonJS",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.ts",
+    "build": "tsc",
+    "swagger": "node ./swagger.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.3",
+    "sga-core": "^1.2.7",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/swagger-ui-express": "^4.1.6",
+    "nodemon": "^3.1.0",
+    "swagger-autogen": "^2.23.7",
+    "typescript": "^5.4.5"
+  }
+}
